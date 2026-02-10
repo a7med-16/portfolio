@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ahmed Almasry — AI Engineer</title>
+
+<meta name="description" content="Ahmed Almasry | AI Engineer & Data Scientist building intelligent, scalable ML systems.">
+<meta name="author" content="Ahmed Almasry">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background:
+    radial-gradient(circle at 20% 10%,#1e40af22,transparent 40%),
+    radial-gradient(circle at 80% 20%,#a855f722,transparent 40%),
+    linear-gradient(#05070f,#0b1020);
+  color:#c7d2fe;
+}
+a{text-decoration:none;color:inherit;transition:0.3s}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 70px;
+  display:flex;
+  justify-content:space-between;
+  background:rgba(5,7,15,.65);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #1e293b;
+  z-index:1000;
+}
+nav ul{list-style:none;display:flex;gap:30px}
+nav a{opacity:.85;font-weight:500;color:#c7d2fe}
+nav a:hover{opacity:1;color:#22d3ee}
+
+/* HERO */
+#hero{
+  min-height:100vh;
+  padding:140px 20px 80px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.hero-ring{
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  padding:6px;
+  background:conic-gradient(#22d3ee,#3b82f6,#a855f7,#22d3ee);
+  box-shadow:0 0 60px #22d3ee44;
+  margin-bottom:35px;
+}
+.hero-ring img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+#hero h1{
+  font-size:3.6rem;
+  font-weight:700;
+  background: linear-gradient(120deg, #22d3ee, #a855f7, #f43f5e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(34,211,238,0.6), 0 0 12px rgba(244,63,94,0.5);
+}
+#hero h3{
+  margin:14px 0 20px;
+  font-weight:400;
+  color:#94a3b8;
+  text-shadow: 0 0 2px rgba(34,211,238,0.3);
+}
+#hero p{
+  max-width:760px;
+  line-height:1.9;
+  opacity:.9;
+  color:#c7d2fe;
+  text-shadow: 0 0 2px rgba(34,211,238,0.2);
+}
+.hero-actions{
+  margin-top:40px;
+  display:flex;
+  gap:22px;
+}
+.btn{
+  padding:15px 38px;
+  border-radius:999px;
+  font-weight:600;
+  transition:.35s;
+}
+.btn.primary{
+  background: linear-gradient(135deg,#22d3ee,#3b82f6,#f43f5e);
+  color: #fff;
+  box-shadow: 0 0 25px #22d3ee55, 0 0 35px #f43f5e33;
+}
+.btn.secondary{
+  border:1px solid #f43f5e;
+  color:#f43f5e;
+}
+.btn:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(244,63,94,0.5), 0 0 25px rgba(34,211,238,0.4);
+}
+
+/* SECTIONS */
+section{
+  max-width:1250px;
+  margin:auto;
+  padding:120px 70px;
+}
+section h2{
+  text-align:center;
+  font-size:2.5rem;
+  margin-bottom:70px;
+  background:linear-gradient(120deg,#f43f5e,#22d3ee,#a855f7);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow: 0 0 6px rgba(244,63,94,0.5), 0 0 8px rgba(34,211,238,0.4);
+}
+
+/* GLASS CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:34px;
+}
+.card{
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.15);
+  backdrop-filter:blur(22px);
+  padding:34px;
+  border-radius:26px;
+  transition:.4s;
+  position:relative;
+  z-index:1;
+}
+.card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:26px;
+  background:linear-gradient(120deg,#22d3ee44,transparent 60%);
+  opacity:0;
+  transition:.4s;
+}
+.card:hover::after{opacity:1}
+.card:hover{
+  transform:translateY(-12px);
+  border-color:#22d3ee;
+  box-shadow: 0 15px 30px rgba(34,211,238,0.25), 0 15px 40px rgba(244,63,94,0.2);
+}
+.card h3{
+  color:#22d3ee;
+  margin-bottom:14px;
+  font-size:1.4rem;
+  display:flex;
+  align-items:center;
+  text-shadow:0 0 4px rgba(34,211,238,0.4);
+}
+.card p, .card ul, .card ul li {
+  color:#c7d2fe;
+}
+.card ul {
+  text-align:left;
+  padding-left:20px;
+  margin-bottom:10px;
+}
+.card ul li {margin-bottom:6px;}
+
+/* Project Buttons */
+.project-buttons {
+  display: flex; 
+  gap: 15px; 
+  margin-top: 15px; 
+  justify-content: center; 
+  flex-wrap: wrap;
+}
+.btn-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg,#22d3ee,#3b82f6,#a855f7);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 10;
+}
+.btn-project:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:0 6px 12px rgba(34,211,238,0.5);
+}
+.btn-project i {font-size: 1.1rem;}
+
+/* TIMELINE */
+.timeline{
+  border-left:3px solid #3b82f6;
+  padding-left:34px;
+}
+.timeline-item{
+  margin-bottom:60px;
+}
+.timeline-item span{
+  color:#a855f7;
+  font-size:.9rem;
+}
+.timeline-item h3{
+  margin:8px 0;
+  color:#22d3ee;
+}
+
+/* SKILLS */
+.skill{
+  margin-bottom:30px;
+}
+.skill-top{
+  display:flex;
+  justify-content:space-between;
+  font-size:.9rem;
+  margin-bottom:8px;
+  color:#c7d2fe;
+}
+.skill-bar{
+  height:12px;
+  background:#020617;
+  border-radius:12px;
+  overflow:hidden;
+}
+.skill-bar span{
+  display:block;
+  height:100%;
+  background:linear-gradient(90deg,#22d3ee,#3b82f6,#a855f7,#f43f5e);
+  box-shadow: 0 0 10px rgba(34,211,238,0.4), 0 0 12px rgba(244,63,94,0.3);
+}
+
+/* CONTACT */
+#contact{
+  max-width:1250px;
+  margin:auto;
+  padding:120px 70px;
+  color: #c7d2fe;
+  text-align:center;
+  background:
+    radial-gradient(circle at 20% 10%,#1e40af22,transparent 40%),
+    radial-gradient(circle at 80% 20%,#a855f722,transparent 40%),
+    linear-gradient(#05070f,#0b1020);
+  border-top:1px solid #1e293b;
+  border-bottom:1px solid #1e293b;
+  border-radius:20px;
+}
+#contact h2{
+  font-size:2.7rem;
+  margin-bottom:30px;
+  background: linear-gradient(90deg,#22d3ee,#a855f7,#f43f5e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(34,211,238,0.6), 0 0 12px rgba(244,63,94,0.5);
+}
+#contact p{
+  max-width:760px;
+  margin:0 auto 40px auto;
+  line-height:2;
+  color:#c7d2fe;
+  text-shadow: 0 0 2px rgba(34,211,238,0.2);
+}
+.contact-links{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.contact-links a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:60px;
+  height:60px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:50%;
+  margin:0 12px;
+  color:#22d3ee;
+  font-size:1.8rem;
+  transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
+}
+.contact-links a:hover{
+  transform: translateY(-6px) scale(1.12);
+  box-shadow: 0 8px 25px rgba(34,211,238,0.4), 0 8px 30px rgba(244,63,94,0.3);
+  color:#fff;
+}
+#contact p:last-child{
+  font-size:1rem;
+  margin-top:25px;
+  opacity:0.7;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:16px 25px}
+  section{padding:90px 25px}
+  #hero h1{font-size:2.6rem}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-ring">
+    <img src="C:\Users\technology\OneDrive\Desktop\profile.jpg">
+  </div>
+  <h1>Ahmed Almasry</h1>
+  <h3>AI Engineer & Data Scientist</h3>
+  <p>
+    Building intelligent AI and Machine Learning models that transform data into real-world solution & scalable impact.
+  </p>
+  <div class="hero-actions">
+    <a class="btn primary" href="C:\Users\technology\OneDrive\Desktop\my_cv\Ahmed_Almasry_cv 2.pdf" download>Download CV</a>
+    <a class="btn secondary" href="#projects">View Projects</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2 style="text-align:center;">About Me</h2>
+
+  <p style="width:100%; max-width:900px; margin:0 auto 30px auto; line-height:2; text-align:left;">
+      I am an AI & Machine Learning Engineer passionate about transforming complex data into intelligent, real-world solutions that deliver measurable impact. I build end-to-end AI systems, covering the full lifecycle—from data preprocessing and feature engineering to model training, evaluation, and deployment.
+      My expertise with Python, TensorFlow, PyTorch, Scikit-learn, pandas, and NumPy enables me to tackle diverse AI challenges effectively.
+  </p>
+
+  <p style="width:100%; max-width:900px; margin:0 auto 30px auto; line-height:2; text-align:left;">
+      I focus on creating AI solutions that solve real problems, enhance user experiences, and generate tangible business value. Continuously learning and innovating, 
+      I apply AI to high-value challenges and contribute to data-driven products that truly make a difference.
+  </p>
+
+  <p style="width:100%; max-width:900px; margin:0 auto 0 auto; line-height:2; text-align:left;">
+      I build advanced, precise, and scalable AI systems that turn complex data into actionable, high-performance solutions. No generic models.
+      No theoretical promises—only meticulously crafted Machine Learning engineered for the highest level of reliability and excellence. If you want true quality and work that makes a difference, I’m your go-to expert.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+
+  <!-- Programming Languages -->
+  <div class="skill">
+    <div class="skill-top"><span>Python</span><span>95%</span></div>
+    <div class="skill-bar"><span style="width:95%"></span></div>
+  </div>
+  <div class="skill">
+    <div class="skill-top"><span>C/C++</span><span>80%</span></div>
+    <div class="skill-bar"><span style="width:80%"></span></div>
+  </div>
+  <div class="skill">
+    <div class="skill-top"><span>JavaScript</span><span>75%</span></div>
+    <div class="skill-bar"><span style="width:75%"></span></div>
+  </div>
+
+  <!-- Machine Learning & Data Science -->
+  <div class="skill">
+    <div class="skill-top"><span>Machine Learning</span><span>90%</span></div>
+    <div class="skill-bar"><span style="width:90%"></span></div>
+  </div>
+  <div class="skill">
+    <div class="skill-top"><span>Data Science Tools (Pandas, NumPy, Scikit-learn)</span><span>85%</span></div>
+    <div class="skill-bar"><span style="width:85%"></span></div>
+  </div>
+
+  <!-- Deep Learning & NLP -->
+  <div class="skill">
+    <div class="skill-top"><span>Deep Learning & NLP</span><span>85%</span></div>
+    <div class="skill-bar"><span style="width:85%"></span></div>
+  </div>
+  <div class="skill">
+    <div class="skill-top"><span>PyTorch, TensorFlow, Keras, Transformers</span><span>80%</span></div>
+    <div class="skill-bar"><span style="width:80%"></span></div>
+  </div>
+
+  <!-- Computer Vision -->
+  <div class="skill">
+    <div class="skill-top"><span>Computer Vision (YOLOv8, OpenCV)</span><span>80%</span></div>
+    <div class="skill-bar"><span style="width:80%"></span></div>
+  </div>
+
+  <!-- Tools & Platforms -->
+  <div class="skill">
+    <div class="skill-top"><span>Tools & Platforms (Git, Colab, VS Code, Kaggle)</span><span>85%</span></div>
+    <div class="skill-bar"><span style="width:85%"></span></div>
+  </div>
+
+  <!-- Databases -->
+  <div class="skill">
+    <div class="skill-top"><span>Databases (MySQL, MongoDB)</span><span>75%</span></div>
+    <div class="skill-bar"><span style="width:75%"></span></div>
+  </div>
+
+  <!-- Soft Skills -->
+  <h3>Soft Skills</h3>
+  <ul>
+    <li>Problem-Solving</li>
+    <li>Critical Thinking</li>
+    <li>Teamwork and Collaboration</li>
+    <li>Communication Skills (including Virtual Presentations)</li>
+    <li>Time Management</li>
+  </ul>
+</section>
+
+<section id="education">
+  <h2>Education & Courses</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span>Oct 2021 – Aug 2025</span>
+      <h3>Bachelor of Artificial Intelligence</h3>
+      <p>Department of Artificial Intelligence and Machine Learning | Egyptian Russian University</p>
+      <p><strong>Relevant Coursework:</strong></p>
+      <ul style="margin-top:10px;line-height:1.8;">
+        <li>Introduction to Computer Science | Introduction to Python Programming</li>
+        <li>Mathematics for Machine Learning & Artificial Intelligence</li>
+        <li>Introduction to Artificial Intelligence | Machine Learning Concepts & Algorithms</li>
+        <li>Natural Language Processing | Deep Learning | Computer Vision</li>
+        <li>Database Fundamentals & Introduction to SQL</li>
+      </ul>
+    </div>
+    
+    <div class="timeline-item" style="margin-top:40px;">
+      <span>Multiple Institutions & Platforms</span>
+      <h3>Certifications & Courses</h3>
+      <ul style="margin-top:10px;line-height:1.8;">
+        <li>Introduction to Computer Science – ITI & Harvard</li>
+        <li>Introduction to Python – Harvard University, Huawei Academy, MAHARA Tech, Ministry of Youth and Sports, Kaggle</li>
+        <li>Mathematics for Machine Learning & Artificial Intelligence – DeepLearning.AI</li>
+        <li>One Million Experts for AI Commands – Dubai Future Foundation</li>
+        <li>Data Cleaning & Visualization – Kaggle</li>
+        <li>Introduction to Artificial Intelligence – Harvard University & Sprints & NVIDIA Academy</li>
+        <li>Machine Learning Engineer – Coursera & Google Skills & Machine Learning</li>
+        <li>Generative AI – NVIDIA Academy & ITI</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <span>January 2024 – July 2025</span>
+      <h3>
+        <i class="fas fa-chart-line" style="color:#FF5722; margin-right:8px;"></i>
+        Data Scientist
+      </h3>
+      <ul>
+        <li>Performed exploratory data analysis (EDA) and visualized insights to guide decision-making.</li>
+        <li>Built predictive models using supervised and unsupervised learning techniques.</li>
+        <li>Applied statistical analysis and feature engineering to optimize model performance.</li>
+        <li>Worked with large datasets and databases to extract actionable insights.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <span>August 2025 – Present</span>
+      <h3>
+        <i class="fas fa-robot" style="color:#4CAF50; margin-right:8px;"></i>
+        Freelance Machine Learning & AI Developer
+      </h3>
+      <ul>
+        <li>Designed, trained, and deployed ML & DL models for classification, NLP, and computer vision.</li>
+        <li>Implemented end-to-end ML pipelines including data preprocessing, feature engineering, hyperparameter tuning, and model evaluation.</li>
+        <li>Collaborated remotely using Git/GitHub with agile development workflows.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="services">
+  <h2>Services</h2>
+  <p class="intro" style="text-align:center; max-width:900px; margin:0 auto 50px auto; font-size:1.1rem; color:#c7d2fe;">
+    I provide comprehensive AI & Machine Learning services, from data analysis to advanced deep learning, 
+    delivering end-to-end solutions that transform data into actionable insights.
+  </p>
+  
+  <div class="cards" style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+    <div class="card" style="flex:1 1 280px; max-width:280px;">
+      <i class="fas fa-table" style="font-size:40px; color:#22d3ee; margin-bottom:15px;"></i>
+      <h3>Data Analysis & Cleaning</h3>
+      <p>Inspecting, cleaning, and preparing raw data to ensure high-quality input for Machine Learning models and analytics.</p>
+    </div>
+    
+    <div class="card" style="flex:1 1 280px; max-width:280px;">
+      <i class="fas fa-robot" style="font-size:40px; color:#a855f7; margin-bottom:15px;"></i>
+      <h3>End-to-End Machine Learning Model</h3>
+      <p>Designing, training, and deploying complete ML pipelines, from preprocessing to evaluation and production-ready deployment.</p>
+    </div>
+    
+    <div class="card" style="flex:1 1 280px; max-width:280px;">
+      <i class="fas fa-chart-pie" style="font-size:40px; color:#f59e0b; margin-bottom:15px;"></i>
+      <h3>Data Visualization & Dashboards</h3>
+      <p>Creating interactive dashboards and visualizations to transform complex datasets into actionable insights.</p>
+    </div>
+    
+    <div class="card" style="flex:1 1 280px; max-width:280px;">
+      <i class="fas fa-cogs" style="font-size:40px; color:#22c55e; margin-bottom:15px;"></i>
+      <h3>Feature Engineering & Model Optimization</h3>
+      <p>Extracting and selecting key features, tuning hyperparameters, and optimizing models for maximum performance.</p>
+    </div>
+    
+    <div class="card" style="flex:1 1 280px; max-width:280px;">
+      <i class="fas fa-brain" style="font-size:40px; color:#f43f5e; margin-bottom:15px;"></i>
+      <h3>Deep Learning & NLP Services</h3>
+      <p>Developing advanced neural networks and natural language processing models for image, text, and speech analysis.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="cards">
+
+    <div class="card">
+      <h3><i class="fas fa-file-invoice-dollar" style="margin-right:8px; color:#facc15;"></i> Loan Eligibility Prediction System</h3>
+      <p>End-to-end ML pipeline predicting loan approval using Random Forest (81% accuracy). Full data preprocessing, model comparison, and hyperparameter tuning included.</p>
+      <ul>
+        <li>Interactive GUI built with Tkinter for real-time predictions.</li>
+        <li>Deployed model using Joblib.</li>
+      </ul>
+      <div class="project-buttons">
+        <a href="https://github.com/a7med-16/loan_prediction/blob/main/README.txt" target="_blank" class="btn-project">
+          <i class="fa fa-file-text"></i> README
+        </a>
+        <a href="https://github.com/a7med-16/loan_prediction" target="_blank" class="btn-project">
+          <i class="fa fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-amazon" style="margin-right:8px; color:#ff9900;"></i> Amazon Reviews Sentiment Analysis</h3>
+      <p>Analyzed sentiment of 500+ Amazon reviews using VADER, RoBERTa, and Hugging Face pipeline.</p>
+      <ul>
+        <li>Compared rule-based (VADER) vs. transformer-based (RoBERTa) approaches.</li>
+        <li>Visualized results with Seaborn and Matplotlib.</li>
+      </ul>
+      <div class="project-buttons">
+        <a href="https://github.com/a7med-16/Sentiment-Analysis/blob/main/README.md" target="_blank" class="btn-project">
+          <i class="fa fa-file-text"></i> README
+        </a>
+        <a href="https://github.com/a7med-16/Sentiment-Analysis" target="_blank" class="btn-project">
+          <i class="fa fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-eye" style="margin-right:8px; color:#22d3ee;"></i> Vision Aid (AI Assistive System)</h3>
+      <p>Real-time YOLOv5 system on Raspberry Pi achieving 15 FPS and 87% detection accuracy.</p>
+      <ul>
+        <li>User-centric testing with 4.6/5 usability score.</li>
+        <li>Intuitive TTS voice interaction and Sensor Fusion (Vision + Ultrasonic) with 94% feedback accuracy.</li>
+      </ul>
+      <div class="project-buttons">
+        <a href="https://github.com/a7med-16/Vision-Aid-AI-Assistive-System/blob/main/README.txt" target="_blank" class="btn-project">
+          <i class="fa fa-file-text"></i> README
+        </a>
+        <a href="https://github.com/a7med-16/Vision-Aid-AI-Assistive-System" target="_blank" class="btn-project">
+          <i class="fa fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>
+    Have a project in mind? I’m ready to help you turn your ideas into reality. 
+    Reach out and let’s create something amazing!
+  </p>
+  
+  <div class="contact-links">
+    <a href="mailto:a7medalma3ry@gmail.com" title="Send me an email" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/a7medalma3ry" target="_blank" rel="noopener" title="Connect on LinkedIn" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/a7med-16" target="_blank" rel="noopener" title="Check my GitHub" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  
+  <p style="margin-top:25px; font-size:1rem; opacity:0.7;">
+    I reply within 24 hours — let’s make something amazing together!
+  </p>
+</section>
+
+</body>
+</html>
